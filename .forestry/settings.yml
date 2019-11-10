@@ -36,7 +36,7 @@ build:
   - CECIL_VERSION=4.21.2
   preview_output_directory: _site
   install_dependencies_command: bash .forestry/install.sh
-  preview_docker_image: composer:latest
-  mount_path: "/usr/src"
+  preview_docker_image: forestryio/hugo:latest
+  mount_path: "/srv"
   working_dir: "/usr/src"
   instant_preview_command: php cecil.phar serve -d --host=0.0.0.0 --port=8080
