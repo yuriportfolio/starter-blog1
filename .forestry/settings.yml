@@ -34,9 +34,10 @@ build:
   preview_env:
   - PHP_VERSION=7.2
   - CECIL_VERSION=4.21.2
-  preview_output_directory: _site
-  install_dependencies_command: bash .forestry/install.sh
-  preview_docker_image: forestryio/hugo:latest
+  preview_output_directory: public
+  install_dependencies_command: npm install
+  preview_docker_image: forestryio/hugo:node10
   mount_path: "/srv"
   working_dir: "/usr/src"
-  instant_preview_command: php cecil.phar serve -d --host=0.0.0.0 --port=8080
+  instant_preview_command: hugo server -D -E -F --port 8080 --bind 0.0.0.0 --renderToDisk
+    -d public
